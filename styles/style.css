@@ -1,0 +1,149 @@
+:root {
+    --white: #fff;
+}
+
+body{
+    background-color: thistle;
+    color: var(--white);
+    box-sizing: border-box;
+}
+
+div, section, header, footer, a, strong, ul, ol, li {
+    margin: 0 0;
+    padding: 0 0;
+    box-sizing: border-box;
+}
+
+.y-auto {
+    margin: auto 0;
+}
+
+.navbar {
+    position: fixed;/*фиксируем положение*/
+    left: 0;/*Убираем отступы */
+    top: 0;
+    width: 100%;/*ширина на весь экран */
+    height: 56px;/*высота */
+    background: #4faa3f;/*цвет*/
+}
+.wrap {
+    display: flex;/*чтобы логотип и список ul оказались в одном ряду*/
+    justify-content: space-between;/*пространство между логотипом и списком */
+}
+
+.logo {
+    text-decoration: none;/*убираем подчеркивание*/
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.hamb {
+    display: none;
+}
+
+.menu > li > a {
+    text-decoration: none;/*убираем подчеркивание */
+}
+ul{
+    list-style: none;/*убираем круглишки*/
+}
+.menu {
+    display: flex;/*список с вертикального в горизонтальный*/
+}
+
+.menu > li > a {
+    padding: 0 20px;/*отступы между списками */
+    color: #ffff;
+}
+.menu > li > a:hover {
+    color: rgb(197, 190, 190);
+}
+
+header, section, footer {
+    min-height: 100vh;
+}
+
+
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;/*когда уменьшим экран список изчезнет*/
+    }
+
+    .hamb {
+        display: block;
+    }
+
+    /*Здесь мы делаем сам бургер  */
+    .bar {
+        display: block;
+        width: 30px;
+        height: 3px;
+        margin: 6px auto;
+        background-color: #fff;
+        transition: 0.2s;
+    }
+    .hamb__field {
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    /* Анимация для кнопки */
+    .hamb__field.opened .bar:nth-child(1) {
+        transform: rotate(-405deg) translate(-6px, 10px);
+    }
+    .hamb__field.opened .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamb__field.opened .bar:nth-child(3) {
+        transform: rotate(405deg) translate(-3px, -7px);
+    }
+
+    /*блок который будет плано выдвегаться слева направо при клике на нашу иконку */
+    .popup {
+        position: fixed;
+        top: 56px;
+        left: -100%;/*изначально его не будет видно */
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        z-index: 100;
+        display: flex;
+        transition: 0.3s;
+    }
+
+    .popup.open {
+        left: 0;    /*при нажатии на иконку left от -100 вернется в 0*/
+    }
+
+    .popup .menu {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        padding: 50px 0;
+        overflow: auto;
+    }
+
+    .popup .menu > li {
+        width: 100%;
+    }
+
+    .popup .menu > li > a {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+        font-size: 20px;
+        font-weight: bold;
+        color: #3f3f3f;
+    }
+
+    .popup .menu > li > a:hover {
+        background-color: rgba(122, 82, 179, 0.1);
+    }
+}
