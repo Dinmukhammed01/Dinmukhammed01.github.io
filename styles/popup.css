@@ -1,0 +1,93 @@
+.popup_contact_btn{
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: powderblue;
+    margin: 20% 50% ;
+}
+.popup_contact{
+    display: none;
+}
+.popup_contact_overlay{
+    position: fixed;  /* чтобы сделать фон на весь экран */
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);/*цвет фона , 0,5-это празрачность */
+    display: flex; /*нужен чтобы контент , который мы будем прописывть в дальнейшем был по центру*/
+    justify-content: center;
+    text-align: center;
+
+
+}
+.content{
+    background-color: #fff;/*цвет */
+    width: 900px;/*ширина */
+    height: 400px;/*высота*/
+    border-radius: 0.3rem;/*закругляем углы*/
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.3);/*добавим тени , чтобы был эффект выступающего элемента*/
+    margin-top: 8%;/*отступ внешний */
+    position: relative;/*нужен для позиционирования кнопки close */
+    background-color: rgb(71, 158, 158);
+
+}
+.close{
+    position: absolute;
+    right:  10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+
+
+
+.form h1{
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    margin-top: 45px;
+}
+
+.form p{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+    color: #FFFFFF;
+}
+
+
+.i_1{
+    width: 319px;
+    height: 55px;
+    background: #FFFFFF;
+    border-radius: 5px ;
+    border: 0px solid white;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 12px;
+    color: #939393;
+}
+.sub{
+
+    width: 160px;
+    height: 55px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 12px;
+    color: #FFFFFF;
+    background: #000000;
+    border-radius: 5px;
+    margin-top: 10px;
+}
